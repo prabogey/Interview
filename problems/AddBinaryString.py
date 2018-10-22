@@ -18,7 +18,11 @@ def convert(a, b):
         elif ((a[x] == "1" and b[x] == "0") or (a[x] == "0" and b[x] == "1")) and not carry:
             res += "1"
         else:
-            res += "0"
+            if not carry:
+                res += "0"
+            else:
+                carry = False
+                res += "1"
     if len(b) == len(a):
         if carry:
             res += "1"
