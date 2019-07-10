@@ -1,4 +1,9 @@
 public class DutchFlagColoring {
+
+    // sort an array of 3 distinct elements in one pass
+    // start is the end of the 0 block
+    // end is the start of the 2 block
+    // the mid denotes what we are comparing
     public static void sortArr(int[] arr) {
         int start = 0;
         int mid = 0;
