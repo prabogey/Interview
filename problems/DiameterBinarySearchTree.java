@@ -23,13 +23,3 @@ public class DiameterBinarySearchTree {
         return Math.max(left, right) + 1;
     }
 }
-
-class BSTNode {
-    int val;
-    BSTNode right;
-    BSTNode left;
-
-    public BSTNode(int x) {
-        this.val = x;
-    }
-}
