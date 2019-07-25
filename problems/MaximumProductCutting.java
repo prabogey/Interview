@@ -20,11 +20,7 @@ public class MaximumProductCutting {
         int ans = -1;
         for (int i = 2; i < n; i++) {
             int x = 0;
-            if (maxAtLength.containsKey(n - i)) {
-                x = maxAtLength.get(n - i);
-            } else {
-                x = findMaxAtLength(n - i, maxAtLength);
-            }
+            x = maxAtLength.get(n - i);
             int y = maxAtLength.get(i);
             ans = Math.max(ans, x * y);
         }
@@ -33,6 +29,6 @@ public class MaximumProductCutting {
     }
 
     public static void main(String[] args) {
-        System.out.println(findMax(10));
+        System.out.println(findMax(5));
     }
 }
