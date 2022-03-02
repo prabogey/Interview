@@ -40,7 +40,7 @@ public class SplitLinkedListIntoKParts {
      *     ListNode(int x) { val = x; }
      * }
     */
-    public ListNode[] splitListToParts(ListNode root, int k) {
+    public ListNode[] splitListToPartsEasier(ListNode root, int k) {
         int size = findSizeOfList(root);
 
         if (size <= k) {
@@ -51,48 +51,24 @@ public class SplitLinkedListIntoKParts {
 
         int partitionSize = size / k;
         int remainder = size % k;
-        int extra = (remainder > 0) ? 1 : 0;
 
         int startIndex = 0;
-        ListNode lastNode = null;
+        ListNode nextNode = head;
         while (startIndex < k) {
-            int i = 0;
-            ListNode currInPartition = null;
-            while (i < partitionSize + extra) {
-                 i++;
-                // starting a new entry in the array
-                if (currInPartition == null) {
-                    // partition size is 1 so just end here
-                    if ((partitionSize + extra) == 1) {
-                        ListNode temp = new ListNode(lastNode.val);
-                        temp.next = null;
-                        answer[startIndex] = temp;
-                        lastNode = lastNode.next;
-                    } else {
-                        // partition is larger, start it and then continue
-                        if (lastNode == null) {
-                            answer[startIndex] = root;
-                            currInPartition = root;
-                        } else {
-                            answer[startIndex] = lastNode;
-                            currInPartition = lastNode;
-                        }
-                    }
-                } else {
-                    if (i == partitionSize + extra) {
-                        if (currInPartition.next != null) {
-                            ListNode temp = new ListNode(currInPartition.next.val);
-                            temp.next = null;
-                            lastNode = currInPartition.next.next;
-                            currInPartition.next = temp;
-                        }
-                    } else {
-                        currInPartition = currInPartition.next;
-                    }
-                }
+            answer[startIndex] = nextNode;
+            if (remainder > 0) {
+                int loopSize = partitionSize + 1;
+            } else {
+                int loopSize = partitionSize;
             }
-            if (remainder > 0) remainder--;
-            if (remainder == 0) extra = 0;
+            int i = 0;
+            ListNode curr = nextNode;
+            while (i < loopSize) {
+                curr = curr.next;
+                i++;
+            }
+            nextNode = curr.next;
+            curr.next = null;
             startIndex++;
         }
         return answer;

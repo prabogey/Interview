@@ -33,7 +33,7 @@ public class LeetCodeSubstring {
         int ans = -1;
         for (int j = 0; j < n; j++) {
             if (visited.containsKey(s.charAt(j))) {
-                i = Math.max(visited.get(s.charAt(j)), i); //jump i to the index where the duplicate is, everything before this index
+                i = Math.max(visited.get(s.charAt(j)), i); // jump i to the index where the duplicate is, everything before this index
                 // is not included in the substring
             }   
             visited.put(s.charAt(j), j + 1);

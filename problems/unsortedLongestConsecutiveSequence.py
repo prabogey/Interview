@@ -16,11 +16,13 @@ def findLongestConsecSequence(arr):
             largest += 1
             it -= 1
             seen.add(it)
+            atLeastOneExists.remove(it)
         it = item
         while it + 1 in cont:
             counter += 1
             it += 1
             seen.add(it)
+            atLeastOneExists.remove(it)
         if counter > largest:
             largest = counter
     return largest

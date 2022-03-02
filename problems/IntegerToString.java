@@ -11,7 +11,7 @@ public class Solution {
         
         while (num > 0) {
             if (num % 1000 != 0)
-                words = helper(num % 1000) +THOUSANDS[i] + " " + words;
+                words = helper(num % 1000) + THOUSANDS[i] + " " + words;
             num /= 1000;
             i++;
         }

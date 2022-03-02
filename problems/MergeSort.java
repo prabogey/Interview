@@ -27,7 +27,6 @@ public class MergeSort {
 		}
 
 		for (int i = 0; i < r; i++) {
-			System.out.println(i);
 			right[i] = arr[mid + 1 + i];
 		}
 
@@ -43,7 +42,6 @@ public class MergeSort {
 				j++;
 			}
 			k++;
-			System.out.println(k);
 		}
 
 		while (i < l) {

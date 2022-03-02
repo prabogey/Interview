@@ -20,8 +20,6 @@ public class GCD
           r = x % y;
           x = y;
           y = r;
-          System.out.println("x: " + x);
-          System.out.println("y: " + y);
       }
       return x;
   }

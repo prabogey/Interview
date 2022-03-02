@@ -155,7 +155,7 @@ public class LinkedListProblems {
             headA = headA.next;
             lenA--;
         }
-        while (headA != null || headB != null) {
+        while (headA != null && headB != null) {
             if (headA == headB) {
                 return headA;
             }

@@ -7,7 +7,7 @@ public class EditDistance {
                     table[i][j] = j; //if i == 0 then you just add the length of n to the end 
                 } else if (j == 0) {
                     table[i][j] = i; //if j == 0 then you just add the length of m to the end
-                } else if (m.charAt(i - 1) == n.charAt(i - 1)) {
+                } else if (m.charAt(i - 1) == n.charAt(i - 1)) { // if they are the same just ignore and continue
                     table[i][j] = table[i - 1][j - 1];
                 } else {
                     table[i][j] = 1 + Math.min(Math.min(table[i - 1][j], table[i][j - 1]), table[i - 1][j - 1]);

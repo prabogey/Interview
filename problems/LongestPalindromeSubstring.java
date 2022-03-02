@@ -22,12 +22,10 @@ public class LongestPalindromeSubstring {
                 int j = len + i - 1;
                 if (s.charAt(i) == s.charAt(j) && table[i + 1][j - 1]) {
                     table[i][j] = true;
-                    if (((j - i + 1) > maxLength)) {
-                        maxLength = j - i + 1;
+                    if (len > maxLength) {
+                        maxLength = len;
                         longestBegin = i;
                     }
-                } else {
-                    table[i][j] = false;
                 }
             }
         }

@@ -45,7 +45,7 @@ public class Trie {
     // method returns the longest prefix that is present (as a completed word) in the Trie
     // For example if child is the key and children is in the Trie
     // it will return an empty String since there is no word in this Trie dictionary that is also a prefix of child
-    // however, if chil was in the Trie than it would return chil
+    // however, if child was in the Trie than it would return child
     public String longestPrefix(String key) {
         StringBuilder ret = new StringBuilder("");
         TrieNode curr = root;

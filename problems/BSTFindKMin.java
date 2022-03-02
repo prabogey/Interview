@@ -28,10 +28,11 @@ public class BSTFindKMin {
     // if k is greater than this value then you know that the answer has to be in the right subtree
     public int findKMinBinarySearch(TreeNode root, int k) {
         int left = count(root.left);
-        if (k <= count) {
+        if (k <= left) {
             return findKMinBinarySearch(root.left, k);
-        } else if (k > count + 1) {
-            return findKMinBinarySearch(root.right, k - 1 - count); // we have to subtract one (because the root counts) and we subtract
+        } else if (k > left + 1) {
+            return findKMinBinarySearch(root.right, k - 1 - left); 
+            // we have to subtract one (because the root counts) and we subtract
             // count because we dont care about the entire left subtree which contains count number of lower nodes
         }
 

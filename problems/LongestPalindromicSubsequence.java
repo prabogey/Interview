@@ -6,6 +6,7 @@ public class LongestPalindromicSubsequence {
         for (int i = 0; i < n; i++) {
             table[i][i] = 1;
         }
+        // building the table diagonally
         for (int len = 2; len <= n; len++) {
             for (int i = 0; i < n - len + 1; i++) {
                 int j = len + i - 1;

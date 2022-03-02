@@ -4,7 +4,7 @@ public class ReverseInteger {
 		while (x > 0) {
 			int y = x % 10;
 			newNum = newNum * 10 + y;
-			x = x / 10
+			x = x / 10;
 		}
 		return newNum;
 	}

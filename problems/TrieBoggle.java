@@ -26,6 +26,11 @@ public class TrieBoggle {
         }
         if (!root.refs.containsKey(key.charAt(0))) return false;
 
+        // This solution does not account for times when there are multiple valid paths from a letter
+        // to solve for this create two arrays of the 8 cardinal directions then return true if any return true
+        // we can also use dp to solve this
+        // if you are at an index in the board at a particular index of the string, we know if its a word
+        // or not
         // right one
         if (isSafe(x + 1, y, height, width) && board[x + 1][y] == key.charAt(0)) {
             return boggleHelper(board, key.substring(1, key.length()), x + 1, y, root.refs.get(key.charAt(0)));

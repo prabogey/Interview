@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class ValidSudoku {
     public boolean isValidSudoku(char[][] board) {
         boolean colsAndRows = isValid(board);

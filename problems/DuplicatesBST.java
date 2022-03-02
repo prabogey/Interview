@@ -19,7 +19,7 @@ public class DuplicatesBST {
         String right = serialize(root.right, ret, counts);
         String serial = node.val + "," + left + "," + right;
         counts.put(serial, counts.getOrDefault(serial, 0) + 1);
-        if (counts.get(serial)  == 2) {
+        if (counts.get(serial) > 1) {
             ret.add(node.val);
         }
         return serial;

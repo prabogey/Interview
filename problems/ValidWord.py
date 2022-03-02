@@ -71,6 +71,7 @@ def recursiveHelper(node, word, index, visited, savedSubproblems, lenGraph):
         return False
     
     if repr([node, index]) in savedSubproblems:
+        visited.remove(node)
         return savedSubproblems[repr([node, index])]
     
     for neighbor in node.neighbors:
@@ -82,6 +83,7 @@ def recursiveHelper(node, word, index, visited, savedSubproblems, lenGraph):
                 return True
             visited = tempVisited
     savedSubproblems[repr([node, index])] = False
+    visited.remove(node)
     return False
 
 

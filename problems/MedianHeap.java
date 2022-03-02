@@ -40,6 +40,6 @@ public class MedianHeap {
             median = minHeap.poll();
             return;
         }
-        median = (minHeap.poll() + maxHeap.poll()) / 2
+        median = (minHeap.poll() + maxHeap.poll()) / 2;
     }
 }

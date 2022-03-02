@@ -48,7 +48,7 @@ public class Bits {
     public static int checkIfNumberIsPowerOf2(int n) {
         // returns 1 if it is power of 2
         // for it to be power of 2 only one bit can be set
-        return (1 ^ (n & (n - 1)));
+        return (0 ==  (n & (n - 1)) ? 1 : 0);
     }
 
     public static int unsetLeftMostSetBit(int n) {
